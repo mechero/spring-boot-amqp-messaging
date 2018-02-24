@@ -1,4 +1,4 @@
-package es.macero;
+package com.thepracticaldeveloper.rabbitmqconfig;
 
 import java.io.Serializable;
 

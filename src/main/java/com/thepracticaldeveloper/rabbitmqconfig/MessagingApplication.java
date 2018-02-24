@@ -1,4 +1,4 @@
-package es.macero;
+package com.thepracticaldeveloper.rabbitmqconfig;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -20,7 +20,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableRabbit
 @EnableScheduling
-public class MessagingApplication implements RabbitListenerConfigurer{
+public class MessagingApplication implements RabbitListenerConfigurer {
 
 	public static final String EXCHANGE_NAME = "appExchange";
 	public static final String QUEUE_GENERIC_NAME = "appGenericQueue";

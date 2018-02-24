@@ -1,4 +1,4 @@
-package es.macero;
+package com.thepracticaldeveloper.rabbitmqconfig;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
