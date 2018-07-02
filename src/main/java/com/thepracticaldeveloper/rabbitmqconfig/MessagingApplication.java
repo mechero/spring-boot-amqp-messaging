@@ -59,7 +59,7 @@ public class MessagingApplication implements RabbitListenerConfigurer {
 	// You can comment all methods below and remove interface's implementation to use the default serialization / deserialization
 	@Bean
 	public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
-		final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+		final var rabbitTemplate = new RabbitTemplate(connectionFactory);
 		rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
 		return rabbitTemplate;
 	}
@@ -76,7 +76,7 @@ public class MessagingApplication implements RabbitListenerConfigurer {
 
 	@Bean
 	public DefaultMessageHandlerMethodFactory messageHandlerMethodFactory() {
-		DefaultMessageHandlerMethodFactory factory = new DefaultMessageHandlerMethodFactory();
+		var factory = new DefaultMessageHandlerMethodFactory();
 		factory.setMessageConverter(consumerJackson2MessageConverter());
 		return factory;
 	}
