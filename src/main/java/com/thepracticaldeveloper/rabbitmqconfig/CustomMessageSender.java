@@ -23,7 +23,7 @@ public class CustomMessageSender {
 
     @Scheduled(fixedDelay = 3000L)
     public void sendMessage() {
-        final CustomMessage message = new CustomMessage("Hello there!", new Random().nextInt(50), false);
+        final var message = new CustomMessage("Hello there!", new Random().nextInt(50), false);
         log.info("Sending message...");
         rabbitTemplate.convertAndSend(MessagingApplication.EXCHANGE_NAME, MessagingApplication.ROUTING_KEY, message);
     }
