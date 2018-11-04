@@ -1,18 +1,18 @@
 package com.thepracticaldeveloper.rabbitmqconfig;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
-public final class CustomMessage implements Serializable{
+public final class CustomMessage implements Serializable {
 
-    private String text;
-    private int priority;
-    private boolean secret;
+    private final String text;
+    private final int priority;
+    private final boolean secret;
 
-    // Default constructor is needed to deserialize JSON
-    public CustomMessage() {
-    }
-
-    public CustomMessage(String text, int priority, boolean secret) {
+    public CustomMessage(@JsonProperty("text") String text,
+                         @JsonProperty("priority") int priority,
+                         @JsonProperty("secret") boolean secret) {
         this.text = text;
         this.priority = priority;
         this.secret = secret;
