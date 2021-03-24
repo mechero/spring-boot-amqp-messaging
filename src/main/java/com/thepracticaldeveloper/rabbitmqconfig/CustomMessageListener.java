@@ -13,11 +13,11 @@ public class CustomMessageListener {
 
     @RabbitListener(queues = MessagingApplication.QUEUE_GENERIC_NAME)
     public void receiveMessage(final Message message) {
-        log.info("Received message as generic: {}", message.toString());
+        log.info("Received message as a generic AMQP 'Message' wrapper: {}", message.toString());
     }
 
     @RabbitListener(queues = MessagingApplication.QUEUE_SPECIFIC_NAME)
     public void receiveMessage(final CustomMessage customMessage) {
-        log.info("Received message as specific class: {}", customMessage.toString());
+        log.info("Received message and deserialized to 'CustomMessage': {}", customMessage.toString());
     }
 }
